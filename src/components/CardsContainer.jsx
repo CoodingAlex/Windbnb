@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react'
+import AppContext from '../context/AppContext'
+import Card from '../components/Card'
+import '../assets/styles/Card.scss'
 
-const CardsContainer = ({ children }) => {
-	return (
-		<div >
-			{children}
-		</div>
-	);
+const CardsContainer = ({  }) => {
+  const { state, filterData } = useContext(AppContext)
+  const { filteredData } = state
+  useEffect(() => {
+		filterData({})
+  }, [])
+  return (
+    <div className="cards-container">
+      {filteredData.map((item) => (
+       <Card {...item} key={item.title}/>
+          ))}
+    </div>
+  )
 }
 
-export default CardsContainer;
+export default CardsContainer

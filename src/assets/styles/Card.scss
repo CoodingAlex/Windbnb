@@ -1,4 +1,12 @@
 @import './Vars.scss';
+@import './Media.scss';
+.cards-container{
+  @include desktop{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 30px;
+  }
+}
 .card {
   margin-top: 24px;
   .card-img-container {
@@ -10,6 +18,9 @@
   img {
     max-width: 100%;
     border-radius: 24px;
+    @include desktop{
+      max-height: 300px;
+    }
   }
   span {
     font-family: $font1;

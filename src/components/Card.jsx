@@ -1,6 +1,6 @@
 import React from 'react';
 import '../assets/styles/Card.scss';
-import logo from '../assets/static/triangleLogo.png'
+import logo from '../assets/static/triangleLogo.png';
 const Card = ({ title, superHost, type, beds, rating, photo }) => {
   return (
     <div className="card">
@@ -9,14 +9,14 @@ const Card = ({ title, superHost, type, beds, rating, photo }) => {
       </figure>
       <div className="card-stats">
         <div className="card-stats-wrapper">
- {superHost && <span className="card-host">super host</span>}
-        <span className="card-size">
-          {type}. {beds ? `${beds} beds` : ''} 
-        </span>
+          {superHost && <span className="card-host">super host</span>}
+          <span className="card-size">
+            {type}. {beds ? `${beds} beds` : ''}
+          </span>
         </div>
-       
+
         <span className="card-rate">
-        <img src={logo} alt="" />
+          <img src={logo} alt="" />
           {rating}
         </span>
       </div>
