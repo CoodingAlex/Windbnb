@@ -54,6 +54,7 @@ const Menu = () => {
 
               <input
                 className="menu-location"
+                type="text"
                 ref={locationInput}
                 value={filter.location}
                 placeholder="Location"

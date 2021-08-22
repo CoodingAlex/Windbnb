@@ -8,7 +8,11 @@ const useFilter = () => {
     let filteredData = state.stays
     if (filter['location']) {
       filteredData = filteredData.filter(
-        (item) => item.country.toLowerCase() === filter['location'].toLowerCase() || item.city.toLowerCase() === filter['location'].toLowerCase()
+        (item) =>
+          item.country
+            .toLowerCase()
+            .includes(filter['location'].toLowerCase()) ||
+          item.city.toLowerCase().includes(filter['location'].toLowerCase())
       )
     }
     if (filter['maxGuests']) {
